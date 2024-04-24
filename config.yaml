@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    macos:
+      xcode: "13.4.1"
+    steps:
+      - checkout
+      - run:
+          name: Build project
+          command: xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme build
+      - run:
+          name: Run tests
+          command: xcodebuild -workspace YourProject.xcworkspace -scheme YourScheme test
